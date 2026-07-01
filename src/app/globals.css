@@ -1,0 +1,136 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 2%;
+    --foreground: 0 0% 98%;
+    --card: 0 0% 4%;
+    --card-foreground: 0 0% 98%;
+    --popover: 0 0% 4%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 217 91% 60%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 0 0% 8%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 0 0% 12%;
+    --muted-foreground: 0 0% 64%;
+    --accent: 263 70% 58%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 14%;
+    --input: 0 0% 14%;
+    --ring: 217 91% 60%;
+    --radius: 0.75rem;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  html.lenis,
+  html.lenis body {
+    height: auto;
+  }
+
+  .lenis.lenis-smooth {
+    scroll-behavior: auto !important;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+
+  ::selection {
+    @apply bg-primary/30 text-white;
+  }
+
+  section[id],
+  [id="hero"] {
+    scroll-margin-top: 6rem;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .glass {
+    @apply border border-white/[0.08] bg-white/[0.04] backdrop-blur-xl transition-[border-color,background-color,box-shadow] duration-300;
+  }
+
+  .glass:hover {
+    @apply border-white/[0.14] bg-white/[0.06] shadow-[0_8px_32px_-12px_rgba(0,0,0,0.5)];
+  }
+
+  .glass-strong {
+    @apply border border-white/[0.12] bg-white/[0.05] backdrop-blur-xl transition-[border-color,background-color,box-shadow] duration-300;
+  }
+
+  .glass-strong:hover {
+    @apply border-white/[0.2] bg-white/[0.08] shadow-[0_12px_40px_-16px_rgba(0,0,0,0.55)];
+  }
+
+  .glow-border {
+    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.06);
+    transition: box-shadow 0.2s ease;
+  }
+
+  .group:hover .glow-border {
+    box-shadow: 0 0 0 1px rgba(59, 130, 246, 0.2);
+  }
+
+  .glow-border-purple {
+    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.06);
+    transition: box-shadow 0.2s ease;
+  }
+
+  .group:hover .glow-border-purple {
+    box-shadow: 0 0 0 1px rgba(139, 92, 246, 0.25);
+  }
+
+  .section-padding {
+    @apply px-4 py-24 sm:px-6 sm:py-32 lg:py-40;
+  }
+
+  .section-container {
+    @apply mx-auto max-w-6xl;
+  }
+
+  .contain-strict {
+    contain: strict;
+  }
+
+  @keyframes hero-bounce {
+    0%,
+    100% {
+      transform: translate3d(0, 0, 0);
+    }
+    50% {
+      transform: translate3d(0, 8px, 0);
+    }
+  }
+}
