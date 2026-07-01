@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Download, FileText } from "lucide-react";
-import { SITE } from "@/lib/content";
+import { SITE, RESUME } from "@/lib/content";
 import { SectionHeader } from "@/components/layout/SectionHeader";
 import { Button } from "@/components/ui/button";
 import { TiltCard } from "@/components/effects/TiltCard";
@@ -42,10 +42,14 @@ export function ResumeSection() {
                 <h3 className="text-xs font-medium uppercase tracking-wider text-muted-foreground">
                   Education
                 </h3>
-                <p className="mt-2 font-medium">{SITE.program}</p>
-                <p className="text-sm text-muted-foreground">
-                  {SITE.institution}
-                </p>
+                <ul className="mt-2 space-y-3">
+                  {RESUME.education.map((item) => (
+                    <li key={item.title}>
+                      <p className="font-medium">{item.title}</p>
+                      <p className="text-sm text-muted-foreground">{item.subtitle}</p>
+                    </li>
+                  ))}
+                </ul>
               </div>
 
               <div>
@@ -53,10 +57,30 @@ export function ResumeSection() {
                   Core Competencies
                 </h3>
                 <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                  Python · SQL · Pandas · Power BI · Tableau · Business Analytics
-                  · Data Visualization · Statistical Analysis · Cross-functional
-                  Leadership
+                  {RESUME.competencies.join(" · ")}
                 </p>
+              </div>
+
+              <div>
+                <h3 className="text-xs font-medium uppercase tracking-wider text-muted-foreground">
+                  Certifications
+                </h3>
+                <ul className="mt-2 space-y-1.5 text-sm text-muted-foreground">
+                  {RESUME.certifications.map((item) => (
+                    <li key={item}>{item}</li>
+                  ))}
+                </ul>
+              </div>
+
+              <div>
+                <h3 className="text-xs font-medium uppercase tracking-wider text-muted-foreground">
+                  Achievements
+                </h3>
+                <ul className="mt-2 space-y-1.5 text-sm text-muted-foreground">
+                  {RESUME.achievements.map((item) => (
+                    <li key={item}>{item}</li>
+                  ))}
+                </ul>
               </div>
 
               <div>
@@ -64,9 +88,9 @@ export function ResumeSection() {
                   Leadership Highlights
                 </h3>
                 <ul className="mt-2 space-y-1.5 text-sm text-muted-foreground">
-                  <li>Mess Committee member — coordinated 550+ participants across campus initiatives</li>
-                  <li>Managed ₹10 Lakhs Mess Committee budget with full accountability</li>
-                  <li>Led cross-functional teams across operations and student welfare</li>
+                  {RESUME.leadership.map((item) => (
+                    <li key={item}>{item}</li>
+                  ))}
                 </ul>
               </div>
             </div>
@@ -74,10 +98,13 @@ export function ResumeSection() {
             <div className="border-t border-white/[0.06] px-6 py-5 sm:px-8">
               <Button variant="default" className="w-full sm:w-auto" asChild>
                 <a
-                  href={`mailto:${SITE.email}?subject=${encodeURIComponent("Resume Request")}&body=${encodeURIComponent("Hi Shudhanshu,\n\nI would like to request a copy of your resume.\n\nThank you.")}`}
+                  href={SITE.resumeUrl}
+                  download={SITE.resumeFileName}
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
                   <Download className="h-4 w-4" />
-                  Request Resume
+                  Download Resume
                 </a>
               </Button>
             </div>

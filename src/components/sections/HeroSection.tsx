@@ -67,7 +67,12 @@ function HeroContent() {
           </a>
         </Button>
         <Button variant="outline" size="lg" className="min-w-[140px]" asChild>
-          <a href={HERO.ctas.resume.href}>
+          <a
+            href={HERO.ctas.resume.href}
+            download={SITE.resumeFileName}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <FileText className="h-4 w-4" />
             {HERO.ctas.resume.label}
           </a>

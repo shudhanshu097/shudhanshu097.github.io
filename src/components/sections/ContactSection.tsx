@@ -85,6 +85,16 @@ export function ContactSection() {
             </div>
 
             <div className="mt-6">
+              <p className="text-sm font-medium">Phone</p>
+              <a
+                href={`tel:${SITE.phone.replace(/\s/g, "")}`}
+                className="mt-1 block text-sm text-muted-foreground transition-colors hover:text-foreground"
+              >
+                {SITE.phone}
+              </a>
+            </div>
+
+            <div className="mt-6">
               <p className="text-sm font-medium">Location</p>
               <p className="mt-1 text-muted-foreground">{SITE.location}</p>
             </div>

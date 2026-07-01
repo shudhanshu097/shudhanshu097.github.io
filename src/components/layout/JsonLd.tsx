@@ -23,6 +23,7 @@ export function JsonLd() {
       "Data Visualization",
     ],
     email: SITE.email,
+    telephone: SITE.phone,
     sameAs: [SITE.linkedin, SITE.github],
   };
 

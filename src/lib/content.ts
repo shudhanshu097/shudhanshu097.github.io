@@ -6,12 +6,15 @@ export const SITE = {
   institution: "Indian Institute of Management Jammu",
   program: "Integrated Programme in Management (IPM)",
   tagline: "Business × Data × Technology",
-  email: "shdhanshuj097@gmail.com",
+  email: "shudhanshuj097@gmail.com",
+  phone: "+91-6306785451",
   collegeEmail: "ipm25125@iimj.ac.in",
   linkedin: "https://www.linkedin.com/in/shudhanshuj/",
   github: "https://github.com/shudhanshu097",
   profileImage: "/images/profile.jpg",
   location: "Jammu, India",
+  resumeUrl: "/Shudhanshu_Jaiswal_CV.docx",
+  resumeFileName: "Shudhanshu_Jaiswal_CV.docx",
   year: new Date().getFullYear(),
 } as const;
 
@@ -37,7 +40,7 @@ export const HERO = {
     "I turn complex datasets into clear, actionable insights — building at the intersection of business strategy, statistics, and modern analytics.",
   ctas: {
     projects: { label: "View Projects", href: "#projects" },
-    resume: { label: "Resume", href: "#resume" },
+    resume: { label: "Download Resume", href: SITE.resumeUrl },
     contact: { label: "Contact", href: "#contact" },
   },
 } as const;
@@ -188,8 +191,8 @@ export const ABOUT = {
   eyebrow: "About",
   title: "Where business instinct meets analytical rigor",
   paragraphs: [
-    "I am an Integrated Programme in Management student at IIM Jammu, building the intersection of management thinking and data science. My work sits at the confluence of strategy, statistics, and systems — turning complex datasets into decisions leaders can act on.",
-    "From econometric modeling to executive dashboards, I approach every problem with the discipline of an analyst and the perspective of a future business leader. I believe the best insights are not just accurate — they are actionable, elegant, and grounded in commercial reality.",
+    "From Pratapgarh, I grew up helping run my family's clothing and jewellery business — learning customer interaction, inventory management, and negotiation firsthand. That early exposure taught me patience, problem-solving, and how to guide people through confusion with clarity.",
+    "Today, as an Integrated Programme in Management student at IIM Jammu, I bring that same curiosity to analytics — from Olist e-commerce analysis to a Monte Carlo revenue simulation for a campus tea stall. I approach every problem with the discipline of an analyst and the perspective of a future business leader.",
   ],
   highlights: [
     {
@@ -444,6 +447,43 @@ export const ROADMAP = [
     items: ["Data analyst internship", "Analytics case competitions", "Industry certification"],
   },
 ] as const;
+
+export const RESUME = {
+  education: [
+    {
+      title: SITE.program,
+      subtitle: `${SITE.institution} · 2025–30`,
+    },
+    {
+      title: "Class XII (CBSE)",
+      subtitle: "New Angels Sr. Sec. School · 2024 · 75.60%",
+    },
+  ],
+  competencies: [
+    "Python",
+    "Pandas & NumPy",
+    "SQL",
+    "Excel",
+    "Data Visualization",
+    "RFM & Cohort Analysis",
+    "Team Coordination",
+    "Adaptability",
+    "Budget Reconciliation",
+  ],
+  certifications: [
+    "SQL — Certificate of Completion, Kaggle Learn",
+    "Pandas — Certificate of Completion, Kaggle Learn",
+    "Python — Certificate of Completion, Kaggle Learn",
+  ],
+  achievements: [
+    "Reached Round 1 of Strategy Storm Case Competition 2026, IIT Guwahati",
+  ],
+  leadership: [
+    "Mess Committee member — coordinated operations for 550+ students across vendors and staff",
+    "Managed ₹10L+ monthly mess budget with full accountability",
+    "Resolved service issues by aligning students, hospitality staff, and administration",
+  ],
+} as const;
 
 export const SOCIAL_LINKS = [
   { label: "LinkedIn", href: SITE.linkedin, icon: "linkedin" as const },
