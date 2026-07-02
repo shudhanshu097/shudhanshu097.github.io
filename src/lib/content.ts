@@ -385,10 +385,12 @@ export const PROJECTS = [
     category: "Business Simulation",
     description:
       "A Monte Carlo simulation model built to evaluate customer demand, business uncertainty, profitability scenarios, and business decision-making through probabilistic analysis.",
-    tags: ["Python", "NumPy", "Pandas", "Matplotlib", "Statistics"],
+    tags: ["Excel", "Monte Carlo", "Statistics", "Business Simulation"],
     preview: "tea-stall" as FeaturedProjectPreview,
-    github: "https://github.com/shudhanshu097",
-    demo: "https://github.com/shudhanshu097",
+    github:
+      "https://github.com/shudhanshu097/tea-stall-monte-carlo-simulation/blob/main/Tapri_Simulation_Enhanced.xlsx",
+    demo:
+      "https://view.officeapps.live.com/op/view.aspx?src=https://raw.githubusercontent.com/shudhanshu097/tea-stall-monte-carlo-simulation/main/Tapri_Simulation_Enhanced.xlsx",
     caseStudy: "#tea-stall-monte-carlo",
     status: {
       label: "Simulation Complete",
